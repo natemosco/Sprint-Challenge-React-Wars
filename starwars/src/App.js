@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
 import PageButton from "./components/PageButton";
+import Card from "./components/Card";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,15 +14,13 @@ const App = () => {
   const [starWarsData, setStarWarsData]= useState([]);
   const [apiRequest, setApiRequest]= useState("people/");
   
-  // people/?page=2
-  // people/?page=3    etc
-  useEffect(() => {
+  // useEffect(() => {
   axios
   .get(`https://swapi.co/api/${apiRequest}`)
   .then(response =>{
     console.log("initial response",response)
-    const setStarWarsData = [response.data.results];
-    console.log("modified response into data array of objects to loop through", arrayOfStarWars);
+    setStarWarsData([response.data.results]);
+    console.log("modified response into data array of objects to loop through", starWarsData);
   })
   .catch(error =>{
     console.log("starwars data not gotten", error);
@@ -30,7 +29,7 @@ const App = () => {
   // return () => {
   //   cleanup
   // };
-}, [starwarsData]);
+// }, [starwarsData]);
   
 return (
     <div className="App">
@@ -44,8 +43,8 @@ return (
       <PageButton onClick={() =>setApiRequest("people/?page8")}>Page 7</PageButton>
       <PageButton onClick={() =>setApiRequest("people/?page9")}>Page 8</PageButton>
       
-      arrayOfStarWars.map((person) => 
-        <Card person= {person}   
+      starWarsData.map((personObj) => 
+        <Card person= {personObj}   
         /> 
       )
              
