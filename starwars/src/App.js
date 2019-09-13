@@ -12,6 +12,7 @@ const App = () => {
   // sync up with, if any.
   const [starWarsData, setStarWarsData]= useState([]);
   const [apiRequest, setApiRequest]= useState("people/");
+  
   // people/?page=2
   // people/?page=3    etc
   useEffect(() => {
