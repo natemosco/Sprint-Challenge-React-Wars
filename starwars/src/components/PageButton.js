@@ -7,6 +7,7 @@ const PageButton = styled.button`
     background: black;
     color: white;
     border-radius: 30px;
+    border:none;
     margin: 5px 10px;
     transition: 0.2s ease-in;
     &:hover {
