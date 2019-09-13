@@ -1,22 +1,27 @@
 //props.person.name, props.person.height, etc
-
 import React from 'react';
-import { Card, Button, CardHeader, CardFooter, CardBody,
-  CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText} from 'reactstrap';
 
 const Card = (props) => {
   return (
     <div>
       <Card>
-        <CardHeader>Header</CardHeader>
         <CardBody>
-          <CardTitle>Special Title Treatment</CardTitle>
-          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Go somewhere</Button>
+          <CardTitle>{props.person.name}</CardTitle>
+          <CardText>Height: {props.person.height}</CardText>
+          <CardText>Mass: {props.person.mass}</CardText>
+          <CardText>Hair Color: {props.person.hair_color}</CardText>
+          <CardText>Skin Color: {props.person.skin_color}</CardText>
+          <CardText>Eye Color: {props.person.eye_color}</CardText>
+          
+          <CardText>Gender: {props.person.gender}</CardText>
+          <CardText>
+            <small className="text-muted">Birth Year: {props.person.birth_year}</small>
+          </CardText>
         </CardBody>
-        <CardFooter>Footer</CardFooter>
       </Card>
+    </div>
   );
 };
 
-export default Example;
+export default Card;
