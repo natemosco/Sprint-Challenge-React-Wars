@@ -12,7 +12,7 @@ const PageButton = styled.button`
     transition: 0.2s ease-in;
     &:hover {
         background:white;
-        color;black;
+        color:black;
     }
 `;
 
