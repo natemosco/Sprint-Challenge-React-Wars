@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  height:auto;
+}
+.Header {
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+}
+.top{
+  height:auto;
+}
+.card{
+  background-color: rgba(230, 210, 243, 0.51) !important;
+}
+.bottom{
+  width:100%;
+  height:630px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .card-body{
+    padding:0;
+  }
+  .person-card{
+    width: 18%;
+    height: 200px;
+    .title{
+      font-size: 15px;
+      padding:0;
+      margin:5px 0;
+    }
+    .stats{
+      font-size: 10px;
+    }
+    .text-muted{
+      font-size: 8px;
+    }
+  }
+}
+/* write your parent styles in here for your App.js */
